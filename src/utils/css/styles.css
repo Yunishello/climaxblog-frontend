@@ -1,0 +1,64 @@
+.icon-size {
+    width: 200px;
+    height: 70px;
+}
+
+.icon-1 {
+    font-size: 60px;
+}
+
+.text-page {
+    font-size:40px;
+    font-family: tahoma, arial, helvetica;
+}
+
+.text-grey {
+    color: #ccc;
+}
+
+.table-style {
+    width: 100%;
+}
+
+.sty {
+    text-align:center;
+    color:green
+}
+
+.table-sty {
+    width: 75vw;
+}
+
+.dev {
+    margin-top: 200px;
+}
+
+@media screen and (max-width:700px){
+    .dev {
+        margin-top: 120px;
+    }
+}
+
+.sidenav {
+    height: 87vh;
+}
+
+.button {
+    padding: 15px;
+    color: black;
+}
+
+.button:hover {
+    padding: 5px 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.anchor {
+    background-color: black;
+    width: 100%;
+}
+
+.money {
+    font-size: 40px;
+}
