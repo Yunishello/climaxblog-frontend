@@ -3,7 +3,6 @@ import axios from "axios";
 import {Link } from 'react-router-dom'
 import Top from "../nav/top";
 import "../utils/css/style.css";
-import "../utils/js/signup";
 
 export default function Signup() {
   // const [name, setName] = useState({name: ''});

@@ -54,7 +54,7 @@ export default function Top() {
 
                                     <ul className="navbar-nav mr-auto">
                                         <li className="nav-item active">
-                                            <Link to="/"  className="nav-link text-dark" href="#">Login</Link>
+                                            <Link to="/login"  className="nav-link text-dark" href="#">Login</Link>
                                         </li>
                                         <li className="nav-item">
                                             <Link to="/register" className="nav-link text-dark" href="#">Register</Link>

@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-body {
+.body {
     background-color: #1d84e4;
     display: flex;
     align-items: center;

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Top from "../nav/top";
 // import Footer from '../footer/footer';
 import "../utils/css/style.css";
-// import "../utils/js/login"
 
 export default function Login() {
   let emailError = '';
@@ -47,7 +46,7 @@ export default function Login() {
   };
   return (
     <>
-      {/* Top Namvigation */}
+      {/* Top Navigation */}
       <Top />
       {/* Login Container Start*/}
 
@@ -66,7 +65,7 @@ export default function Login() {
               onChange={(e) => handleChangeMail(e)}
             />
             <small>Error message</small>
-            <div className="alert alert-danger mt-2">{emailError}</div>
+            {/* <div className="alert alert-danger mt-2">{emailError}</div> */}
           </div>
           <div className="form-file">
             <input
