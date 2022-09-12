@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './pages/home';
 import Login from './pages/login';
-import Signup from './pages/signup';
 import Single from './pages/singleBlog';
 import Profile from './pages/profile';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -15,7 +14,6 @@ ReactDOM.render(
       <Route path="/" element={<Home />} />
       <Route path="/singleBlog" element={<Single />} />
       <Route path='/login' element={<Login />} />
-      <Route path='register' element={<Signup />} />
       <Route path='login' element={<Login />} />
       <Route path='profile' element={<Profile />} />
       <Route path='dashboard' element={<Dashboard />} />

@@ -18,14 +18,14 @@ p {
 
 .login-link {
     text-align: center;
-    color: #5f5d5d;
+    color: #5f5d5d !important;
 }
 
 header {
     padding-bottom: 20px;
 }
 
-.container {
+.container01 {
     background-color: #ffffff;
     min-width: 50%;
     width: 50vw;
@@ -117,7 +117,7 @@ span {
 }
 
 @media screen and (max-width: 768px) {
-    .container {
+    .container01 {
         width: 100%;
     }
 

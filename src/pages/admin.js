@@ -1,6 +1,6 @@
 import React from 'react';
 import '../utils/css/styles.css'
-import '../utils/js/script.js'
+// import '../utils/js/script.js'
 
 export default function Admin() {
     return (

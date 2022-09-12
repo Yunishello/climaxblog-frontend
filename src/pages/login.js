@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Top from "../nav/top";
-// import Footer from '../footer/footer';
-import "../utils/css/style.css";
+import "../utils/blog/css/animate.css";
+import "../utils/blog/css/bootstrap.css";
+import "../utils/blog/css/style.css";
 
 export default function Login() {
-  let emailError = '';
+  let emailError = "";
   const [email, setMail] = useState({ email: "" });
   const [password, setPass] = useState({ password: "" });
 
@@ -29,7 +30,7 @@ export default function Login() {
       .then((res) => {
         if (res.data.Details === undefined) {
           alert("The provided credential doesn't match");
-          window.location.href = "/";
+          window.location.href = "/login";
         } else {
           const islog = true;
           sessionStorage.setItem("islogin", islog);
@@ -40,50 +41,57 @@ export default function Login() {
         }
       })
       .catch((error) => {
-        alert(error.response.data.errors.email);
+        emailError =
+          '<div className="alert alert-danger">' +
+          error.response.data.errors +
+          "</div>";
       });
     e.preventDefault();
   };
   return (
     <>
-      {/* Top Navigation */}
-      <Top />
       {/* Login Container Start*/}
 
-      <main class="container">
-        <header>
-          <h1>Welcome!</h1>
-          <p>Enter Details to Login</p>
-        </header>
-        <form onSubmit={(e) => handleSubmit(e)} id="form">
-          <div className="form-file">
-            <input
-              type="email"
-              placeholder="Email"
-              className="email form-control"
-              id="loginEmail"
-              onChange={(e) => handleChangeMail(e)}
-            />
-            <small>Error message</small>
-            {/* <div className="alert alert-danger mt-2">{emailError}</div> */}
-          </div>
-          <div className="form-file">
-            <input
-              type="password"
-              placeholder="Password"
-              className="password form-control"
-              id="loginPassword"
-              onChange={(e) => handleChangePass(e)}
-            />
-            <small>Error message</small>
-          </div>
-          <button type="submit" className="btn button" id="login">
-            Login
-          </button>
-        </form>
-        <p class="login-link">
-          You don't have an account? <Link to="../register">Register Here</Link>
-        </p>
+      <main class="boxed container mt-5">
+        <Link to="/" className="btn btn-primary" type="submit">
+          Home
+        </Link>
+        <div className="authorbox">{emailError}</div>
+        <div className="content boxed-comment clearfix">
+          <form className="big-contact-form" onSubmit={(e) => handleSubmit(e)}>
+            <h2 className="small-title">Welcome!</h2>
+            <div className="col-md-6">
+              <div className="form-group">
+                <input
+                  type="email"
+                  className="form-control"
+                  name="email"
+                  placeholder="Email Here"
+                  onChange={(e) => handleChangeMail(e)}
+                  required
+                />
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="form-group">
+                <input
+                  type="password"
+                  className="form-control"
+                  name="password"
+                  placeholder="Password Here"
+                  onChange={(e) => handleChangePass(e)}
+                  required
+                />
+              </div>
+            </div>
+            <div className="col-md-12">
+              <br />
+              <button className="btn btn-primary" type="submit">
+                LOGIN
+              </button>
+            </div>
+          </form>
+        </div>
       </main>
       {/* Login End */}
 
