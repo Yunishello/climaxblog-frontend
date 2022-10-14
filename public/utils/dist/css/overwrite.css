@@ -1,0 +1,21 @@
+.p-text {
+    width: 100%;
+    min-height: 15vh;
+}
+.post-img {
+    width: 100%;
+    height: 50%;
+ }
+
+ .post-text {
+     font-family: Georgia, 'Times New Roman', Times, serif;
+ }
+
+ .text-para {
+    font-size: 30px;
+ }
+/* @media {
+    .p-text {
+        width: 100%;
+    } 
+} */

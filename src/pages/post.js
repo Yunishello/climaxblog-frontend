@@ -1,52 +1,42 @@
-import React from "react";
-import SideNav from "../nav/sidebar";
-import Top from "../nav/top";
-// import Users from '../pages/users';
-import Body from "./reply";
-import { Routes, Route } from "react-router-dom";
+import { React, useState } from "react";
 import TopDash from "../nav/topdash";
 
-export default function Profile() {
+export default function Post() {
   return (
     <>
       <div className="row">
         <TopDash />
         {/* <!-- Right side column. Contains the navbar and content of the page --> */}
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-4">
+        <main class="col-md-9 ms-sm-auto col-lg-10 mt-0 px-md-4 mt-4">
           <div class="row">
             <div class="col">
               <div class="box box-primary">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Update Your Profile</h3>
+                  <h3 class="box-title">Add Post</h3>
                 </div>
                 {/* <!-- /.box-header --> */}
                 <div class="box-body">
                   <div class="form-group">
-                    <label for="">
-                      <b>Full Name:</b>
-                    </label>
-                    <input
-                      class="form-control"
-                      placeholder="Full Name:"
-                      value="Alexander Pierce"
-                    />
-                  </div>
-                  <br />
-
-                  <div class="form-group">
-                    <label for="">
-                      <b>Email:</b>
-                    </label>
-                    <input
-                      class="form-control"
-                      placeholder="Email:"
-                      value="email@example.com"
-                    />
+                    <input class="form-control" placeholder="Title:" />
                   </div>
                   <br />
                   <div class="form-group">
+                    <textarea
+                      id="compose-textarea"
+                      placeholder="Blog Post Body"
+                      class="form-control"
+                    >
+                      <p>Add You Post Data Here</p>
+                    </textarea>
+                  </div>
+                  <div class="form-group">
+                    <div class="btn btn-default btn-file">
+                      <i class="fa fa-paperclip"></i>
+                      <input type="file" name="attachment" />
+                    </div>
+                    <p class="help-block">Max. 32MB</p>
                     <button type="submit" class="btn btn-dark">
-                      <i class="fa fa-envelope-o"></i> Update{" "}
+                      <i class="fa fa-envelope-o"></i> Post
                     </button>
                   </div>
                 </div>
@@ -58,8 +48,8 @@ export default function Profile() {
           </div>
           {/* <!-- /.row --> */}
         </main>
-        {/* <!-- /.content --> */}
       </div>
+      {/* <!-- /.content --> */}
     </>
   );
 }

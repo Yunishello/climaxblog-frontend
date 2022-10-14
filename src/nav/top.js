@@ -1,107 +1,69 @@
 import React from "react";
+import Sidebar from "./sidebar";
 import { Outlet, Link } from "react-router-dom";
-import "../utils/blog/css/bootstrap.css";
-import "../utils/blog/css/style.css";
 
 export default function Top() {
-  const login = sessionStorage.getItem("islogin");
-  const isLogin = login;
+  // const user = sessionStorage.getItem("Details");
+  // console.log(user.name);
+  return (
+    <>
+      {/* <!-- Top Navigations --> */}
 
-  console.log(isLogin);
+      <header>
+        <nav
+          className="navbar navbar-expand-sm navbar-dark bg-dark"
+          aria-label="Third navbar example"
+        >
+          <div className="container-fluid">
+            <Link className="navbar-brand text-uppercase" to="/">
+              climax
+            </Link>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarsExample03"
+              aria-controls="navbarsExample03"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
 
-  if (isLogin === true) {
-    return (
-      <>
-        <div class="container">
-          <nav className="navbar navbar-expand-lg container row yamm">
-            <div className="col-1 ml-5">
-              <Link className="navbar-brand" to="#">
-                Climax
-              </Link>
-            </div>
-            <div className="col-10"></div>
-            <div className="col-1">
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-
-              <ul className="navbar-nav mr-auto">
-                <li className="dropdown hassubmenu">
-                  <Link
-                    to="/"
-                    className="nav-link dropdown-toggle"
-                    to="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Yunishello
+            <div className="collapse navbar-collapse" id="navbarsExample03">
+              <ul className="navbar-nav me-auto mb-2 mb-sm-0">
+                <li className="nav-item">
+                  <Link className="nav-link" aria-current="page" to="/">
+                    Home
                   </Link>
-                  <div
-                    className="dropdown-menu"
-                    role="menu"
-                    aria-labelledby="navbarDropdown"
-                  >
-                    <li>
-                      <Link to="/dashboard">Dashboard</Link>
-                    </li>
-                    <li>
-                      <Link to="#">Notification</Link>
-                    </li>
-                    <div className="dropdown-divider"></div>
-                    <Link className="dropdown-item" to="/logout">
-                      Logout
-                    </Link>
-                  </div>
                 </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-        <Outlet />
-      </>
-    );
-  } else {
-    return (
-      <>
-        <div className="container-fluid row">
-          <div className="col-md-10"></div>
-          <div className="col-md-2">
-            <nav className="navbar navbar-expand-lg">
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarTogglerDemo02"
-                aria-controls="navbarTogglerDemo02"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
-                  <Link to="/login" className="btn btn-primary">
+                <li className="nav-item">
+                  <Link className="nav-link" to="#">
+                    About
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="#">
+                    Services
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="#">
+                    Contact Us
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
                     Login
                   </Link>
                 </li>
               </ul>
-            </nav>
+            </div>
           </div>
-        </div>
-        <Outlet />
-      </>
-    );
-  }
+        </nav>
+      </header>
+      {/* <Sidebar /> */}
+      <Outlet />
+    </>
+  );
 }

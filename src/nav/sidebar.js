@@ -1,67 +1,57 @@
-import React from 'react';
-import '../utils/css/styles.css';
-import {Link} from 'react-router-dom';
-
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function SideNav() {
-    return(
-        <>
+  return (
+    <>
+      <nav
+        id="sidebarMenu"
+        className="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse"
+      >
+        <div className="position-sticky pt-3">
+          <ul className="nav flex-column">
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/dashboard">
+                <span data-feather="home"></span>
+                Dashboard
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/post">
+                <span data-feather="file"></span>
+                Add Post
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin">
+                <span data-feather="shopping-cart"></span>
+                Add Admin
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/profile">
+                <span data-feather="users"></span>
+                Profile
+              </Link>
+            </li>
+          </ul>
 
-            {/* sidebar */}
-
-            <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                {/* <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg> */}
-                <span class="fs-4">Sidebar</span>
-                </a>
-                <hr />
-                <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a href="#" class="nav-link active" aria-current="page">
-                    {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg> */}
-                    Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                    {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg> */}
-                    Dashboard
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                    {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg> */}
-                    Orders
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                    {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg> */}
-                    Products
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                    {/* <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg> */}
-                    Customers
-                    </a>
-                </li>
-                </ul>
-                <hr />
-                <div class="nav-item dropdown">
-                    <Link to="" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2" />
-                        <strong>mdo</strong>
-                    </Link>
-                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">New project...</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li><hr class="dropdown-divider" /></li>
-                    <li><Link class="dropdown-item" to="/logout">Sign out</Link></li>
-                </ul>
-                </div>
-            </div>
-        </>
-    )
+          <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Other Options</span>
+            <Link className="link-secondary" to="#" aria-label="Add a new report">
+              <span data-feather="plus-circle"></span>
+            </Link>
+          </h6>
+          <ul className="nav flex-column mb-2">
+            <li className="nav-item">
+              <Link className="nav-link" to="/logout">
+                <span data-feather="file-text"></span>
+                Sign Out
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </>
+  );
 }
